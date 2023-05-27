@@ -1,4 +1,0 @@
-baseURL = 'https://blog.kiwicode.dev/'
-languageCode = 'en-us'
-title = 'Kiwicode.dev blog'
-theme = "PaperMod"
