@@ -1,6 +1,6 @@
 ---
 title: "Automate home appliances"
-date: 2024-01-17T21:00:00+02:00
+date: 2024-01-16T18:00:00+02:00
 authors: ["Mikołaj Wilczek"]
 ---
 Smart home and Internet of Things (IoT) devices are more present in our homes today. This process started several years ago and will continue with the old devices being changed.
