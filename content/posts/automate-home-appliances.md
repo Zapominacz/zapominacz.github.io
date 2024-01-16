@@ -40,11 +40,16 @@ After a trigger is activated, it is a good idea to send a notification to the sm
 
 ### 3d printer power saving
 My Prusa printers have Home Assistant integrations, but they don't have strict information (for now) if the heatend fan is disabled - and this is a problem because disabling the printer while cooling off can damage your extruder. I've identified that:
-* MK3 with Rpi uses ~150-250W during use, ~15W when cooling and no more than 11W in idle (when no cooling is needed)
-* MK4 uses ~150-250W during use, ~20W when cooling and no more than 14W in idle (when no cooling is needed)
+* MK3 with Rpi uses ~100-250W during use, ~15W when cooling and no more than 11W in idle (when no cooling is needed)
+* MK4 uses ~100-250W during use, ~20W when cooling and no more than 14W in idle (when no cooling is needed)
   
 ![TS011F](/automate_home_appliances/mk4_power.png)
 
 It is a great way to save the power :)
+
+## Conclusion
+Using the simple power measurement you can detect a device stage and perform automations, like the notification sending. In most cases, they are sufficient for the home appliances, which requires manual interactions.
+
+
 
 
