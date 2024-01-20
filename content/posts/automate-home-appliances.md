@@ -5,7 +5,7 @@ authors: ["Mikołaj Wilczek"]
 ---
 Smart home and Internet of Things (IoT) devices are more present in our homes today. This process started several years ago and will continue with the old devices being changed.
 
-**TLDR: Smart sockets and power consumption analysis.**
+**TLDR: Smart sockets and power consumption analysis. This is not a silver bullet and needs adjustments.**
 
 ### Non-smart appliances
 As I've already automated half of my home, I look at my 3 years old dishwasher with sadness, knowing a year later a "smart" version was released. But there is no reason to change the dishwasher only because newer has an app provided.
@@ -38,14 +38,18 @@ After measurements implement automations. In my case (Home assistant, `TS011F`),
 
 After a trigger is activated, it is a good idea to send a notification to the smarthome. Notice that other uses will probably need a little different triggers (notification versus power off).
 
+### Downsides
+In my case, the dishwasher sometimes wakes up, causing a notification to trigger. I need to make a higher margin for power or trigger only if previous pover was higher than X W for Y minutes. The adjustments are still in progress.
+
 ### 3d printer power saving
 My Prusa printers have Home Assistant integrations, but they don't have strict information (for now) if the heatend fan is disabled - and this is a problem because disabling the printer while cooling off can damage your extruder. I've identified that:
-* MK3 with Rpi uses ~100-250W during use, ~15W when cooling and no more than 11W in idle (when no cooling is needed)
+* MK3 with Rpi uses ~100-250W during use, ~15W when cooling and no more than 10W in idle (when no cooling is needed)
 * MK4 uses ~100-250W during use, ~20W when cooling and no more than 14W in idle (when no cooling is needed)
   
 ![TS011F](/automate_home_appliances/mk4_power.png)
 
-It is a great way to save the power :)
+Due to variability, the notification might be triggered earlier. It is a better solution to use PrusaLink if possible. However, 20 minute delay guarantees that printer will not be disabled with heatend fan being enabled (even with silicon socket).
+It is still a great way to save the power :)
 
 ## Conclusion
 Using the simple power measurement you can detect a device stage and perform automations, like the notification sending. In most cases, they are sufficient for the home appliances, which requires manual interactions.
