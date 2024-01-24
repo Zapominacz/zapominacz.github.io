@@ -1,6 +1,6 @@
 ---
 title: "3D printed screws"
-date: 2024-01-24T21:00:00+02:00
+date: 2024-01-24T18:00:00+02:00
 authors: ["Mikołaj Wilczek"]
 ---
 My main reason for buying a 3D printer was to print mechanical parts - both for learning and creating home projects. 
